@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { videosAPI } from './services/videosAPI';
+import { IVideos } from './models/IVideos';
 
 const App: React.FC = () => {
   useEffect(() => {}, []);
@@ -14,7 +15,7 @@ const App: React.FC = () => {
     <div>
       {error && <h1>Error</h1>}
       {videos &&
-        videos.map((video: any) => (
+        videos.map((video: IVideos) => (
           <div key={video.authorMeta.id}>{video.authorMeta.name}</div>
         ))}
       {isLoading && <h1>Loading...</h1>}

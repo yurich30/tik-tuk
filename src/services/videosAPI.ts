@@ -1,10 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
+import { IVideos } from '../models/IVideos';
 
 export const videosAPI = createApi({
   reducerPath: 'videosAPI',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://tiktok33.p.rapidapi.com' }),
   endpoints: (build) => ({
-    fetchAllVideos: build.query({
+    fetchAllVideos: build.query<IVideos[], number>({
       query: () => ({
         method: 'GET',
         url: '/trending/feed',
