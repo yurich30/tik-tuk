@@ -1,27 +1,25 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
+import { videosAPI } from './services/videosAPI';
 
 const App: React.FC = () => {
-  useEffect(() => {
-    const options = {
-      method: 'GET',
-      url: 'https://tiktok33.p.rapidapi.com/user/feed/dave.xp',
-      headers: {
-        'x-rapidapi-host': 'tiktok33.p.rapidapi.com',
-        'x-rapidapi-key': '294f036434msh90cf68bd9dd8898p152614jsn805ac4221ef0',
-      },
-    };
+  useEffect(() => {}, []);
 
-    const getData = async () => {
-      // @ts-ignore
-      const res = await axios.request(options);
-      console.log(res.data);
-    };
+  const {
+    data: videos,
+    error,
+    isLoading,
+  } = videosAPI.useFetchAllVideosQuery(5);
 
-    getData();
-  });
-
-  return <div>TikTuk</div>;
+  return (
+    <div>
+      {error && <h1>Error</h1>}
+      {videos &&
+        videos.map((video: any) => (
+          <div key={video.authorMeta.id}>{video.authorMeta.name}</div>
+        ))}
+      {isLoading && <h1>Loading...</h1>}
+    </div>
+  );
 };
 
 export default App;
