@@ -11,7 +11,7 @@ const VideoItem: React.FC<VideoItemProps> = ({ video }) => {
   return (
     <div className="item">
       <div className="item__header">
-        <Link to={`/user/${video.authorMeta.name}`}>
+        <Link to={`/user`}>
           <div className="author__info">
             <img
               src={video.authorMeta.avatar}

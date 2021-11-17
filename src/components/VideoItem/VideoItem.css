@@ -26,8 +26,46 @@
 
 .item__video{
   max-width: 300px;
+  grid-row-end: span 2;
 }
 
-.item__video-section{
+.item__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px 10px;
+}
 
+.item__header{
+  margin-bottom: 10px;
+}
+
+.follow__button{
+  max-height: 40px;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 40px auto;
+}
+
+.item__avatar{
+  margin-right: 5px;
+}
+
+.item a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.item a:hover {
+  color: #f1356d;
+}
+
+.item .name{
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.hashtags{
+  margin: 5px 0;
 }
