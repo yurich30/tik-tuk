@@ -1,25 +1,21 @@
-import React, { useEffect } from 'react';
-import { videosAPI } from './services/videosAPI';
-import { IVideos } from './models/IVideos';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import VideoItems from './components/VideoItem/VideoItems';
+import Navbar from './components/Navbar';
+import UserInfo from './components/UserInfo/UserInfo';
+import NotFound from './components/NotFound/NotFound';
 
 const App: React.FC = () => {
-  useEffect(() => {}, []);
-
-  const {
-    data: videos,
-    error,
-    isLoading,
-  } = videosAPI.useFetchAllVideosQuery(5);
-
   return (
-    <div>
-      {error && <h1>Error</h1>}
-      {videos &&
-        videos.map((video: IVideos) => (
-          <div key={video.authorMeta.id}>{video.authorMeta.name}</div>
-        ))}
-      {isLoading && <h1>Loading...</h1>}
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<VideoItems />} />
+        <Route path="/profile" element={<div>Profile</div>} />
+        <Route path="/user/:id" element={<UserInfo />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 };
 

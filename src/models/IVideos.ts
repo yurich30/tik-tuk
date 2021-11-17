@@ -17,7 +17,7 @@ export interface IVideos {
   commentCount: number;
   downloaded: number;
   mentions: [];
-  hashtags: [];
+  hashtags: Hashtags[];
   effectStickers: EffectStickers[];
 }
 
@@ -64,4 +64,11 @@ interface VideoMeta {
   height: number;
   width: number;
   duration: number;
+}
+
+interface Hashtags {
+  id: string;
+  name: string;
+  title: string;
+  cover: string;
 }
