@@ -16,5 +16,16 @@ export const videosAPI = createApi({
         },
       }),
     }),
+    fetchUserInfo: build.query({
+      query: () => ({
+        method: 'GET',
+        url: '/user/info/dave.xp',
+        headers: {
+          'x-rapidapi-host': 'tiktok33.p.rapidapi.com',
+          'x-rapidapi-key':
+            '294f036434msh90cf68bd9dd8898p152614jsn805ac4221ef0',
+        },
+      }),
+    }),
   }),
 });

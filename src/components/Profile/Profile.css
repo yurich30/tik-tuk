@@ -1,0 +1,16 @@
+.container {
+  max-width: 1300px;
+  margin: 40px auto;
+}
+
+.user{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user__avatar{
+  max-width: 200px;
+  border-radius: 50%;
+}
