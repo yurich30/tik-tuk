@@ -1,5 +1,5 @@
 import React from 'react';
-import { videosAPI } from '../../services/videosAPI';
+import { videosApi } from '../../services/videosApi';
 import { IVideos } from '../../models/IVideos';
 import VideoItem from './VideoItem';
 import Loader from '../Loader/Loader';
@@ -9,7 +9,7 @@ const VideoItems = () => {
     data: videos,
     error,
     isLoading,
-  } = videosAPI.useFetchAllVideosQuery('');
+  } = videosApi.useFetchAllVideosQuery('');
 
   return (
     <div className="item__list container">

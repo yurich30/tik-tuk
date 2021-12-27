@@ -1,15 +1,15 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { videosAPI } from '../services/videosAPI';
+import { videosApi } from '../services/videosApi';
 
 const rootReducer = combineReducers({
-  [videosAPI.reducerPath]: videosAPI.reducer,
+  [videosApi.reducerPath]: videosApi.reducer,
 });
 
 export const setupStore = () => {
   return configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(videosAPI.middleware),
+      getDefaultMiddleware().concat(videosApi.middleware),
   });
 };
 

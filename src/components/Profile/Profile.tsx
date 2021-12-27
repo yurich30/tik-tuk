@@ -1,11 +1,11 @@
-import { videosAPI } from '../../services/videosAPI';
+import { videosApi } from '../../services/videosApi';
 import Loader from '../Loader/Loader';
 import React from 'react';
 import './Profile.css';
 import UserVideos from '../UserVideos/UserVideos';
 
 const Profile = () => {
-  const { data: user, error, isLoading } = videosAPI.useFetchUserInfoQuery('');
+  const { data: user, error, isLoading } = videosApi.useFetchUserInfoQuery('');
   return (
     <div className="container">
       {error && <h1>Error</h1>}

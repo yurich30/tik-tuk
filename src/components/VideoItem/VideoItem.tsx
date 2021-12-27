@@ -3,11 +3,11 @@ import { IVideos } from '../../models/IVideos';
 import './VideoItem.css';
 import { Link } from 'react-router-dom';
 
-interface VideoItemProps {
+interface VideoItemProperties {
   video: IVideos;
 }
 
-const VideoItem: React.FC<VideoItemProps> = ({ video }) => {
+const VideoItem: React.FC<VideoItemProperties> = ({ video }) => {
   return (
     <div className="item">
       <div className="item__header">

@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
 import { IVideos } from '../models/IVideos';
 
-export const videosAPI = createApi({
-  reducerPath: 'videosAPI',
+export const videosApi = createApi({
+  reducerPath: 'videosApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://tiktok33.p.rapidapi.com' }),
   endpoints: (build) => ({
     fetchAllVideos: build.query<IVideos[], string>({

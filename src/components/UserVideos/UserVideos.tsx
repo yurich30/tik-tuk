@@ -7,12 +7,12 @@ const UserVideos = () => {
 
   return (
     <div className="container item__list">
-      {data.itemList.map((el) => (
-        <div key={el.id}>
-          <div>View Count: {el.stats.playCount}</div>
+      {data.itemList.map((element) => (
+        <div key={element.id}>
+          <div>View Count: {element.stats.playCount}</div>
           <video
             controls
-            src={el.video.playAddr}
+            src={element.video.playAddr}
             autoPlay
             loop
             className="item__video"
